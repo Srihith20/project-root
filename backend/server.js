@@ -13,7 +13,7 @@ const app = express();
  * For example, if your frontend is running on http://localhost:3000,
  * change this to 'http://localhost:3000'.
  */
-app.use(cors({ origin: 'https://pro-1-three.vercel.app/' })); // Adjust for your frontend
+app.use(cors({ origin: 'https://slotify-two.vercel.app/' })); // Adjust for your frontend
 app.use(express.json());
 
 // Multer setup for file uploads
@@ -46,12 +46,6 @@ app.use('/api/slots', require('./routes/slotRoutes')(authMiddleware));
 app.get('/', (req, res) => {
     res.send('Backend is running');
 });
-
-const cors = require('cors');
-app.use(cors({
-    origin: 'https://pro-1-three.vercel.app/',
-    credentials: true
-}));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
