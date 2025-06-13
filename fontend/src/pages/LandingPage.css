@@ -1,0 +1,73 @@
+.news-marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.news-content {
+  display: flex;
+  white-space: nowrap;
+  font-weight: bold;
+  animation: marquee 25s linear infinite;
+}
+
+.news-content span {
+  display: inline-block;
+  padding-right: 1.5rem;
+  min-width: max-content;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.news-marquee:hover .news-content {
+  animation-play-state: paused;
+}
+
+@media (max-width: 640px) {
+  .news-content span {
+    font-size: 0.9rem;
+    padding-right: 1rem;
+  }
+}
+
+/* New animation for certificate icon */
+@keyframes certificate-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.certificate-bounce {
+  animation: certificate-bounce 2s ease-in-out infinite;
+}
+
+/* New animations for hero section certificate icons */
+@keyframes certificate-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.certificate-spin {
+  animation: certificate-spin 8s linear infinite;
+}
+
+.certificate-spin-delayed {
+  animation: certificate-spin 8s linear infinite;
+  animation-delay: 2s;
+}
+
+/* Background image for hero section */
+.bg-hero-pattern {
+  background-image: url('https://plus.unsplash.com/premium_photo-1682075199505-e96c80e84e5a?q=80&w=1957&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+}
